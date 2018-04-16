@@ -1,0 +1,10 @@
+{
+  "name": "external-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "fastify": "^1.2.1",
+    "minimist": "^1.2.0",
+    "simple-get": "^2.7.0"
+  }
+}

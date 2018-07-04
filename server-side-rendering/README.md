@@ -10,7 +10,9 @@ Each request is rendered on the server.
 
 ## Dependencies
 [node-clinic](https://github.com/nearform/node-clinic)
+
 [autocannon](https://github.com/mcollina/autocannon)
+
 [react-pwa](https://github.com/nearform/react-pwa)
 
 ```

@@ -11,32 +11,7 @@ const headers = {
 const requests = [
   {
     method: 'GET',
-    path: '/api/stories?filter=top',
-    headers
-  },
-  {
-    method: 'GET',
-    path: '/api/stories?filter=top&page=2',
-    headers
-  },
-  {
-    method: 'GET',
-    path: '/api/stories?filter=top&page=3',
-    headers
-  },
-  {
-    method: 'GET',
-    path: '/api/comments',
-    headers
-  },
-  {
-    method: 'GET',
-    path: '/api/stories?filter=show',
-    headers
-  },
-  {
-    method: 'GET',
-    path: '/api/stories?filter=ask',
+    path: '/show?filter=top',
     headers
   }
 ]

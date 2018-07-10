@@ -1,0 +1,26 @@
+
+
+### STORIES 2nd Run
+Running 10s test @ http://localhost:3000
+10 connections
+
+Stat         Avg     Stdev  Max     
+Latency (ms) 2.87    1.06   16.43   
+Req/Sec      3016    49.22  3072    
+Bytes/Sec    10.6 MB 240 kB 10.8 MB 
+
+30k requests in 10s, 106 MB read
+
+
+
+
+### STORIES with slow event loop
+Running 10s test @ http://localhost:3000
+10 connections
+
+Stat         Avg     Stdev  Max     
+Latency (ms) 2.93    1.13   19.18   
+Req/Sec      2965.8  47.92  3028    
+Bytes/Sec    10.4 MB 257 kB 10.7 MB 
+
+30k requests in 10s, 104 MB read

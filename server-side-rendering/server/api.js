@@ -92,7 +92,6 @@ module.exports = async function(fastify, opts) {
         data = await Data.slowIO(variables.type, variables.limit)
         break
       case 'slowEventLoop':
-        console.log('do slowEventLoop')
         data = await Data.slowEventLoop(variables.type, variables.limit)
         break
       default:

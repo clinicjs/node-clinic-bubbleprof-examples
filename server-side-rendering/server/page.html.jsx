@@ -37,18 +37,8 @@ globalStyles.cssRule('.active', {
 })
 
 export async function renderPage(request, reply) {
-  console.log('\n\n /server/page.html.jsx renderPage')
-  console.log(request.req.url)
-  console.log("### QUERY")
-  console.log(request.query)
-  console.log("### PARAMS")
-  console.log(request.params)
-  console.log
-
   // Prepare the history
   const history = createMemoryHistory({ initialEntries: [request.req.url] })
-
-  
 
   // Preload component data, if anything is defined
   let ssrPreloading = {}

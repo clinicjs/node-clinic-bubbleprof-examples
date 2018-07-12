@@ -23,11 +23,23 @@ npm i
 ```
 
 ## Running the example
-We only need the server for this example to work. As mentioned above, all requests are rendered by the server.
+There are two servers involved with this example. 
+
+1. contains the API for doing the SSR.
+2. contains the API that the first server requests data from.
+
+As mentioned above, all requests are rendered by the server.
+
+#### starting the data server
+```
+npm run start:data
+```
+#### starting the SSR server with bubbleprof
+
 ```
 clinic bubbleprof -- node src/server
 ```
-In a second terminal run the [stories](./stories.js) script
+Then run the autocannon script to request the stories.
 ```
 node server-side-rendering/stories.js
 ```

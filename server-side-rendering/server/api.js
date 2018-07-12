@@ -1,4 +1,3 @@
-const Data = require('./data')
 const sanitizeHtml = require('sanitize-html')
 
 module.exports = async function(fastify, opts) {
@@ -66,7 +65,7 @@ module.exports = async function(fastify, opts) {
     }
 
     // Perform the request
-    const response = await fetch('http://localhost:3000/api/query', {
+    const response = await fetch('http://localhost:3001/api/query', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(body)
@@ -75,33 +74,11 @@ module.exports = async function(fastify, opts) {
     // Parse the response
     const json = await response.json()
     const data = json.data.hn[queryType]
-
     // Cache for 5 minutes
     request.apiCache.put(cacheKey, data, 300 * 1000)
-
     // Return results
     return data
   }
 
-  async function generateData(request, reply) {
-    const { variables } = request.body
-    let data
-
-    switch (variables.path) {
-      case 'slowIO': 
-        data = await Data.slowIO(variables.type, variables.limit)
-        break
-      case 'slowEventLoop':
-        data = await Data.slowEventLoop(variables.type, variables.limit)
-        break
-      default:
-        data = await Data.generate(variables.type, variables.limit)
-        break
-    }
-
-    return data
-  }
-
   fastify.get('/api/stories', fetchStories)
-  fastify.post('/api/query', generateData)
 }

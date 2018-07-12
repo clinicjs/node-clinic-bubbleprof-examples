@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "bubbleprof example for server-side-rendering",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "start:data": "node server-for-data"
   },
   "license": "Apache-2.0",
   "dependencies": {

@@ -1,4 +1,5 @@
 const sanitizeHtml = require('sanitize-html')
+const nodeFetch = require('node-fetch')
 
 module.exports = async function(fastify, opts) {
   const pageSize = 30
@@ -65,7 +66,7 @@ module.exports = async function(fastify, opts) {
     }
 
     // Perform the request
-    const response = await fetch('http://localhost:3001/api/query', {
+    const response = await nodeFetch('http://localhost:3001/api/query', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(body)

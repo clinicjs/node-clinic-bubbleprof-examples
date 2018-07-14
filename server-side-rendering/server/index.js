@@ -20,14 +20,8 @@ function detectHttps() {
 
 function setupFetch(server) {
   global.fetch = async function(url, params) {
-    // External call, just use node-fetch
-    if (!url.startsWith('/api')) return nodeFetch(url, params)
-    // Local fetching, serve with fastify.inject
-    const response = await server.inject({ method: 'GET', url, ...params })
-
-    response.status = response.statusCode
-    response.statusText = response.statusMessage
-    return new nodeFetch.Response(response.payload, response)
+    const _url = (url.startsWith('/api')) ? `http://localhost:3000${url}` : url 
+    return nodeFetch(_url, params)
   }
 }
 
@@ -50,12 +44,8 @@ async function main() {
   }
 
   server.register(require('./api'))
-
-  // Add application assets and manifest.json serving
-  // server.register(require('fastify-static'), { root: resolve(process.cwd(), 'dist/client'), prefix: '/' })
   server.register(require('fastify-compress'))
   server.decorateRequest('apiCache', require('memory-cache'))
-
   // Add server side support for fetch
   setupFetch(server)
 

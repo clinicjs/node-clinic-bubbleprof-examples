@@ -37,15 +37,15 @@ globalStyles.cssRule('.active', {
 })
 
 export async function renderPage(request, reply) {
+  const dataFetcher = (reply.context.config.component && typeof reply.context.config.component.dataFetcher === 'function') ? reply.context.config.component.dataFetcher : undefined
   // Prepare the history
   const history = createMemoryHistory({ initialEntries: [request.req.url] })
-
   // Preload component data, if anything is defined
   let ssrPreloading = {}
 
   try {
-    if (reply.context.config.component && typeof reply.context.config.component.dataFetcher === 'function') {
-      ssrPreloading = { success: true, payload: await reply.context.config.component.dataFetcher(request.params, request.query) }
+    if (dataFetcher) {
+      ssrPreloading = { success: true, payload: await dataFetcher(request.params, request.query) }
     }
   } catch (e) {
     ssrPreloading = { success: false, payload: e }

@@ -18,7 +18,7 @@ function detectHttps() {
   return { https: { key: readFileSync(keyPath), cert: readFileSync(certPath) }, http2: true }
 }
 
-function setupFetch(server) {
+function setupFetch() {
   global.fetch = async function(url, params) {
     const _url = (url.startsWith('/api')) ? `http://localhost:3000${url}` : url 
     return nodeFetch(_url, params)
@@ -47,7 +47,7 @@ async function main() {
   server.register(require('fastify-compress'))
   server.decorateRequest('apiCache', require('memory-cache'))
   // Add server side support for fetch
-  setupFetch(server)
+  setupFetch()
 
   // Run the server!
   await server.listen(3000, '0.0.0.0')

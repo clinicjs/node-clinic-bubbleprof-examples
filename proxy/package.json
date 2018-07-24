@@ -1,0 +1,17 @@
+{
+  "name": "proxy-example",
+  "version": "1.0.0",
+  "description": "Proxy example for clinic",
+  "scripts": {},
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "express-http-proxy": "^1.2.0",
+    "fastify": "^1.8.0",
+    "http-proxy": "^1.17.0"
+  },
+  "dependencies": {
+    "fastify-http-proxy": "^0.4.3"
+  }
+}

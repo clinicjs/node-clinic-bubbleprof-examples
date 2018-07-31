@@ -3,7 +3,7 @@ This example uses code similar to the [react-pwa](https://github.com/nearform/re
 
 1. request stories via the happy path
 2. request stories with an event loop issue
- 
+
 Each request is rendered on the server.
 
 ## Dependencies
@@ -14,7 +14,7 @@ Each request is rendered on the server.
 [react-pwa](https://github.com/nearform/react-pwa)
 
 ```
-npm i -g clinic autocannon 
+npm i -g clinic autocannon
 ```
 
 ```
@@ -23,7 +23,7 @@ npm i
 ```
 
 ## Running the example
-There are two servers involved with this example. 
+There are two servers involved with this example.
 
 1. contains the API for doing the SSR.
 2. contains the API that the first server requests data from.

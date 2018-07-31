@@ -30,24 +30,29 @@ There are two servers involved with this example.
 
 As mentioned above, all requests are rendered by the server.
 
-#### starting the data server
+Open three console windows, and navigate each one to this `server-side-rendering` directory.
+
+#### Console 1: Start the data server
 ```
 npm run start:data
 ```
-#### starting the SSR server with bubbleprof
+#### Console 2: Start the SSR server with bubbleprof
 
 ```
 clinic bubbleprof -- node src/server
 ```
-Then run the autocannon script to request the stories.
+
+#### Console 3: Run the autocannon script to request the stories
 ```
-node server-side-rendering/stories.js
+node stories.js
 ```
-Once autocannon completes its run you should see results like similar to what is below:
+Once autocannon completes its run, you should see results like similar to what is below:
+
 ```
 Running 10s test @ http://localhost:3000
 10 connections
 ...
 40 requests in 10s, 474 kB read
 ```
-At this point, you can stop the server that bubbleprof is gathering details about.  Once bubbleprof finishes its analyses of the data it will open the UI with a visualizaiton of the results.
+
+At this point, switch back to Console 2 (the SSR server being monitored by Bubbleprof) and close the server (`ctrl-c`), which begins the Bubbleprof analysis.  Once this finishes, a browser window will open containing the Bubbleprof UI with a visualization of the results.

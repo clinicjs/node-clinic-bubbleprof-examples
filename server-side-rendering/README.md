@@ -56,3 +56,5 @@ Running 10s test @ http://localhost:3000
 ```
 
 At this point, switch back to Console 2 (the SSR server being monitored by Bubbleprof) and close the server (`ctrl-c`), which begins the Bubbleprof analysis.  Once this finishes, a browser window will open containing the Bubbleprof UI with a visualization of the results.
+
+![screenshot](ssr-screenshot.png)

@@ -37,7 +37,7 @@ npm run start:data
 #### starting the SSR server with bubbleprof
 
 ```
-clinic bubbleprof -- node src/server
+clinic bubbleprof -- node server
 ```
 Then run the autocannon script to request the stories.
 ```

@@ -23,7 +23,6 @@
     "typestyle": "^2.0.1"
   },
   "devDependencies": {
-    "@nearform/clinic": "^0.8.3",
     "autocannon": "^2.4.1"
   }
 }

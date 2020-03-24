@@ -8,21 +8,21 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "async": "^2.6.1",
-    "casual": "^1.5.19",
-    "fastify": "^1.7.0",
-    "fastify-compress": "^0.6.0",
-    "fastify-static": "^0.12.0",
+    "async": "^3.2.0",
+    "casual": "^1.6.2",
+    "fastify": "^2.13.0",
+    "fastify-compress": "^2.0.1",
+    "fastify-static": "^2.6.0",
     "memory-cache": "^0.2.0",
-    "node-fetch": "^2.1.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1",
-    "rss-parser": "^3.4.2",
-    "sanitize-html": "^1.18.2",
-    "typestyle": "^2.0.1"
+    "node-fetch": "^2.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "rss-parser": "^3.7.6",
+    "sanitize-html": "^1.22.1",
+    "typestyle": "^2.0.4"
   },
   "devDependencies": {
-    "autocannon": "^2.4.1"
+    "autocannon": "^4.6.0"
   }
 }

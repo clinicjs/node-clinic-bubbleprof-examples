@@ -6,5 +6,5 @@ with bubbleprof
 To run any of them
 
 ```sh
-clinic bubbleprof --on-port 'autocannon localhost:$PORT'  -- node ./path-to-example
+clinic bubbleprof --autocannon [ / ] -- node ./path-to-example
 ```
